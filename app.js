@@ -25,8 +25,6 @@ function getTime() {
   const hourDegress = ((hours / 12) * 360);
   hourHand.style.transform = `rotate(${hourDegress}deg)`;
 
-  console.log(cogSec)
-
 
 }
 setInterval(getTime,1000)
