@@ -1,0 +1,251 @@
+:root {
+    --clock-hours: #E6BA6F;
+  
+  }
+  
+  #cog_one_gradients{
+    --color-cog1-start: #90694b;
+    --color-cog1-middle: #af8546;
+    --color-cog1-stop: #d4af34;
+  }
+  
+  #cog_two_gradients{
+    --color-cog2-start: #90694b;
+    --color-cog2-middle: #af8546;
+    --color-cog2-stop: #d4af34;
+  }
+  
+  #cog_three_gradients{
+    --color-cog3-start: #90694b;
+    --color-cog3-middle: #af8546;
+    --color-cog3-stop: #d4af34;
+  }
+  
+  @keyframes rotating1 {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+  
+  
+  @keyframes rotating2 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  
+  body {
+    font: 600 16px/1.4 'Crimson Text', serif
+  }
+  .container {
+    max-width: 75%;
+    min-width: 75%;
+    margin: 5% auto 0;
+  }
+  
+  .bounding_box {
+    position: relative;
+  }
+  
+  .clock {
+    width: 600px;
+    height: 600px;
+    background: #201C19;
+    border-radius: 50%;
+    position: relative;
+    box-sizing: border-box;
+    
+    
+  
+  }
+  .clock_border {
+    border: 12px solid var(--clock-hours);
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    box-sizing: border-box;
+  
+  }
+  .clock_hours {
+    font-size: 4rem;
+    color: var(--clock-hours);
+    letter-spacing: 2px;
+    position: absolute;
+    left: 300px;
+    text-shadow: 0px -2px 1px #AF8546;
+    transform-origin: center center;
+  }
+  
+  .clock_hours span {
+    display: block;
+    position: absolute;
+    z-index: 0;
+  }
+  
+  .twelve, .three, .six, .nine {
+    color: #90694b;
+    font-size: 5.25rem;
+    text-shadow: 0px -2px 1px #d4af34;
+  }
+  
+  .twelve {
+    top: -5px;
+    left: -60px;
+    
+  }
+  .one {
+    top: 30px;
+    left: 125px;
+    transform: rotate(30deg);
+  }
+  .two {
+    top: 120px;
+    left: 190px;
+    transform: rotate(50deg);
+  
+  }
+  .three {
+  top: 230px;
+  left: 200px;
+  }
+  .four {
+    top: 390px;
+    left: 185px;
+    transform: rotate(120deg);
+  }
+  
+  .five {
+  top: 480px;
+  left: 100px;
+  transform: rotate(150deg);
+  }
+  .six {
+    top:495px;
+    left: -40px;
+    transform: rotate(-180deg);
+  }
+  .seven {
+    top: 480px;
+    left: -165px;
+    transform: rotate(210deg);
+  }
+  .eight {
+    top: 380px;
+    transform: rotate(240deg);
+    left: -275px;
+  }
+  .nine {
+  top: 230px;
+  left: -275px;
+  }
+  .ten {
+    top: 120px;
+    left: -240px;
+    transform: rotate(-50deg);
+  }
+  .eleven {
+    top: 30px;
+    left: -170px;
+    transform: rotate(-30deg);
+  }
+  
+  .clock_hands {
+    position: absolute;
+    top: 15%;
+    left: 38%;
+    transform-origin: 100%;
+    
+  }
+  
+  
+  .minute_hand svg, .hour_hand svg{
+    position: absolute;
+    z-index: 1;
+    transform-origin: 100%;
+    transform: rotate(360deg)
+    
+    
+  }
+  
+  .minute_hand svg#Layer_minute{
+    width: 150px;
+    height: 240px;
+    fill: #E6BA6F;
+    z-index: 1;
+    transform-origin: 50% 85%;
+    
+  }
+  
+  .hour_hand svg#Layer_1 {
+    width: 150px;
+    height: 210px;
+    fill: #d4af34;
+    stroke: #90694b;
+    stroke-width: 3;
+    top: 35px;
+    left: 0;
+    z-index: 0;
+    transform-origin: 50% 80%;
+  }
+  
+  
+  .seconds_hand {
+    width: 250px;
+    height: 250px;
+    
+    
+  }
+  
+  .clock_mechanics {
+    position: relative;
+    z-index: 0;
+    top: 70%;
+    left: -25px;
+    height: auto;
+  
+  }
+  
+  .cog1 svg, .cog2 svg, .cog3 svg {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: -2;
+  } 
+  
+  .cog1 svg {
+    left: -100px;
+    top: 30px;
+    z-index: -1;
+    fill: url(#cog_one_gradients) #90694b;
+    animation: rotating1 15s linear infinite;
+    
+  }
+  
+  .cog2 svg {
+    right: -55px;
+    z-index: -1;
+    top: 40px;
+    fill: url(#cog_two_gradients) #af8546;
+    animation: rotating1 30s linear infinite;
+  }
+  
+  .cog3 svg {
+    z-index: 0;
+    fill: url(#cog_three_gradients) #d4af34;
+    top: 10px;
+    animation: rotating2 cubic-bezier(0.25, .35, .40, 0.55) infinite;
+    
+  }
